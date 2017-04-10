@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Chikka;
+use App\Transaction;
+use App\User;
+use Illuminate\Support\Facades\Input;
+use DB;
 
 class SendNotifController extends Controller
 {
@@ -23,6 +28,25 @@ class SendNotifController extends Controller
      */
     public function index()
     {
-        return view('sendnotif');
+        
+
+        //$transactions = DB::table('transactions')->select('contactNo')->all();
+        //return view('sendnotif.index');
+        $transactions = User::all();
+        
+        return view('sendnotif.index', compact('transactions'));
+
+
+        //return view('sendnotif.index', compact('transactions'));
     }
+
+    /*public function sendSMS()
+    {
+        // Mobile number of receiver and message to send
+        $mobile = '09157514851';
+        $message = 'Hello world';
+
+        // Send SMS
+        Chikka::send($mobile, $message);
+    }*/
 }

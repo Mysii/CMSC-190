@@ -31,7 +31,7 @@ Route::post('/userprofile/store','UserProfileController@store');
 
 //Route::get('/inventory', 'InventoryController@index');
 //Route::get('/sales', 'SalesController@index');
-Route::get('/sendnotif', 'SendNotifController@index');
+//Route::get('/sendnotif', 'SendNotifController@index');
 Route::get('/about', 'AboutController@index');
 
 
@@ -63,5 +63,9 @@ Route::resource('users', 'UsersController');
 Route::get('/admin', 'UsersController@admin');
 Route::get('/staff', 'UsersController@staff');
 Route::any('/searchusers', 'UsersController@search');
+
+//send notif routes
+Route::get('/sendnotif', 'SendNotifController@index');
+Route::get('/sent', 'SendNotifController@sendSMS');
 
 
