@@ -31,7 +31,7 @@ class SendNotifController extends Controller
         
 
         //$transactions = DB::table('transactions')->select('contactNo')->all();
-        //return view('sendnotif.index');
+        //return view('sendnotif.index'
         $transactions = User::all();
         
         return view('sendnotif.index', compact('transactions'));
@@ -40,13 +40,23 @@ class SendNotifController extends Controller
         //return view('sendnotif.index', compact('transactions'));
     }
 
-    /*public function sendSMS()
+    public function sendSMS()
     {
         // Mobile number of receiver and message to send
-        $mobile = '09157514851';
-        $message = 'Hello world';
+        //$mobile = '09157514851';
+        //$message = 'Hello world';
+
+        $mobile = Input::get ( 'mobile' );
+        $message = Input::get ( 'message' );
 
         // Send SMS
-        Chikka::send($mobile, $message);
-    }*/
+        $response = Chikka::send($mobile, $message);
+
+        // Send SMS and retrieve response
+        //$response = $chikka->send($mobile, $message);
+
+        // Get message id
+        $messageId = $response->attachments->message->id;
+        return redirect()->back();
+    }
 }

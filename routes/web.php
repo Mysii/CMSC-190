@@ -66,6 +66,6 @@ Route::any('/searchusers', 'UsersController@search');
 
 //send notif routes
 Route::get('/sendnotif', 'SendNotifController@index');
-Route::get('/sent', 'SendNotifController@sendSMS');
+Route::any('/sent', 'SendNotifController@sendSMS');
 
 

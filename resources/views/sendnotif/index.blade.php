@@ -22,13 +22,41 @@
 					<form class="form-horizontal input-md" id="" role="form" method="POST" action="/sent">
 							{{ csrf_field() }}
 
+					
+					
+					<div class="panel-footer">
+						<div class="input-group col-md-6">
+							<select id="mobile" type="text" class="form-control input-md" name="mobile" required autofocus>
+									<option>Choose recipient</option>
+									@foreach($transactions as $transaction)
+										<option>{{$transaction->name}} - {{$transaction->contactNo}}</option>
+								
+									@endforeach	
+									</select>
+						</div>
+
+
+						<div class="panel-body">
+							
+						</div>
+
+						<div class="input-group">
+							<input id="message" name="message" type="text" class="form-control input-md" placeholder="Type your message here..." />
+							<span class="input-group-btn">
+								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
+							</span>
+						</div>
+					</div>
+
+					<!--
+
 							<div class="input-group">
 								<label for="mobileNo" class="col-md-4 control-label">Contact No.</label>
 
 								<div class="col-md-6">
-									<select id="mobileNo" type="text" class="form-control" name="mobileNo" value="{{ old('contactNo') }}" required autofocus>
+									<select id="mobileNo" type="text" class="form-control" name="mobileNo" required autofocus>
 										@foreach($transactions as $transaction)
-											<option>{{$transaction->name}} - {{$transaction->contactNo}}</option>
+											<option>{{$transaction->contactNo}}</option>
 										@endforeach
 										
 										
@@ -36,21 +64,9 @@
 								</div>
 							</div>
 
-							<div class="panel-body">
-						
-							</div>
-					
-					<div class="panel-footer">
-						<div class="input-group">
-							<input id="notif" name="notif" type="text" class="form-control input-md" placeholder="Type your message here..." required autofocus>
-						
-							<span class="input-group-btn">
-								<button class="btn btn-success btn-md" id="btn-chat">Send</button>
-							</span>
-						</div>
-					</div>
+						-->	
 
-						</form>
+					</form>
 
 					
 				</div>
