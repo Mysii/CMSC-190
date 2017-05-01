@@ -53,9 +53,12 @@ Route::get('inventory/downloadExcel', 'InventoryController@downloadExcel');
 Route::get('inventory/pdf', 'InventoryController@pdf');
 
 //sales routes
-Route::get('/sales', 'SalesController@index');
-Route::get('inventory/downloadExcel', 'SalesController@downloadExcel');
-Route::get('inventory/pdf', 'SalesController@pdf');
+Route::any('/sales', 'SalesController@index');
+Route::get('sales/downloadExcel', 'SalesController@downloadExcel');
+Route::get('sales/pdf', 'SalesController@pdf');
+Route::any('/daily', 'SalesController@daily');
+Route::any('/weekly', 'SalesController@weekly');
+Route::any('/monthly', 'SalesController@monthly');
 
 //users/adminstaff routes
 Route::resource('adminstaff', 'AdminStaffController');

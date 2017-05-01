@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use Input;
-use App\userprofile;
+//use App\userprofile;
+use App\User;
 
 class UserProfileController extends Controller
 {
@@ -36,7 +37,7 @@ class UserProfileController extends Controller
         $user = Auth::user();
         return view('userprofile')->with(['user' => $user]);
     }
-
+/*
     public function store()
     {
         $name =Input::get('name');
@@ -59,6 +60,14 @@ class UserProfileController extends Controller
             {
                 return redirect()->back();
             }
+    }
+*/
+    public function edit($id)
+    {
+        //
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
+
     }
     
 }

@@ -17,6 +17,9 @@
     <link href="/css/lumino/css/bootstrap-table.css" rel="stylesheet">
     <link href="/css/lumino/css/styles.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="/css/bootstrap-3.3.7/docs/examples/carousel/carousel.css" rel="stylesheet">
+
      <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >-->
 
     <!--Icons-->
@@ -84,6 +87,9 @@
 
         @yield('content')
     </div>
+
+
+
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
