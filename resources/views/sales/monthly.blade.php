@@ -76,7 +76,7 @@
 
 									<div class="input-group">
 										<select id="d" mtype="number" class="form-control input-md" name="dm" required autofocus>
-											<option>Month</option>
+											<option></option>
 											<option>1</option>
 											<option>2</option>
 											<option>3</option>

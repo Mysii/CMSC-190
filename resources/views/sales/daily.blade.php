@@ -42,11 +42,11 @@
 						</form>
 					</div>
 					<div class="col-md-3"> 
-					    <form action="/searchdate" method="POST" role="search">
+					    <form action="/daily" method="POST" role="search">
 							{{ csrf_field() }}
 
 							<div class="input-group">
-								<input type="date" class="form-control" name="d" placeholder="Search..."> 
+								<input type="date" class="form-control" name="dd" placeholder="Search..."> 
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-default">
 									    <span class="glyphicon glyphicon-search"></span>

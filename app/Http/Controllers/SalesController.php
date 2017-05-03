@@ -30,10 +30,8 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::paginate(25);
         $d = Input::get ( 'dd' );
-        $tsanla = DB::table('transactions')->where('transactionType', '=', 'Sanla');
-        $ttubos = DB::table('transactions')->where('transactionType', '=', 'Tubos');
+        $transactions = Transaction::paginate(25);
         
         if(count($transactions) >= 0) {
             return view('sales.index', compact('transactions'))->withDetails($transactions)->withQuery ( $d );

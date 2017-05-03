@@ -26,6 +26,25 @@
 						<form class="form-horizontal" id="transactionForm" role="form" method="POST" action="/transactions">
 							{{ csrf_field() }}
 
+							<div class="form-group{{ $errors->has('transactionType') ? ' has-error' : '' }}">
+								<label for="transactionType" class="col-md-4 control-label">Transaction Type</label>
+
+								<div class="col-md-6">
+									<select id="transactionType" type="" class="form-control" name="transactionType" value="{{ old('transactionType') }}" required autofocus>
+										<option>Sanla</option>
+										<option>Tubos</option>
+										<option>Renew</option>
+									</select>
+
+									@if ($errors->has('transactionType'))
+									<span class="help-block">
+										<strong>{{ $errors->first('transactionType') }}</strong>
+									</span>
+									@endif
+								</div>
+							</div>
+
+
 							<div class="form-group{{ $errors->has('branch') ? ' has-error' : '' }}">
 								<label for="branch" class="col-md-4 control-label">Branch</label>
 
@@ -85,24 +104,7 @@
 								</div>
 							</div>
 							
-							<div class="form-group{{ $errors->has('transactionType') ? ' has-error' : '' }}">
-								<label for="transactionType" class="col-md-4 control-label">Transaction Type</label>
-
-								<div class="col-md-6">
-									<select id="transactionType" type="" class="form-control" name="transactionType" value="{{ old('transactionType') }}" required autofocus>
-										<option>Sanla</option>
-										<option>Tubos</option>
-										<option>Renew</option>
-									</select>
-
-									@if ($errors->has('transactionType'))
-									<span class="help-block">
-										<strong>{{ $errors->first('transactionType') }}</strong>
-									</span>
-									@endif
-								</div>
-							</div>
-
+							
 							<div class="form-group{{ $errors->has('clientName') ? ' has-error' : '' }}">
 								<label for="clientName" class="col-md-4 control-label">Client Name</label>
 								

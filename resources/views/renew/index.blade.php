@@ -93,7 +93,7 @@
 										</tr>
 										</thead>
 
-										@foreach($transactions as $transaction)
+										@foreach($renew as $transaction)
 											<tr>
 												<td>
 												<!-- View Button -->
@@ -135,7 +135,7 @@
 										@endforeach
 										
 								</table>
-								<?php echo $transactions->render(); ?>
+								<?php echo $renew->render(); ?>
 							</div>
 						</div>
 

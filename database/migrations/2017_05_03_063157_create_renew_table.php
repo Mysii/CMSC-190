@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransactionsTable extends Migration
+class CreateRenewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('renews', function (Blueprint $table) {
             $table->increments('id');
             $table->string('branch', 50);
             $table->string('transactionCode', 10)->unique();
@@ -24,6 +24,7 @@ class CreateTransactionsTable extends Migration
             $table->integer('principalLoan');
             $table->integer('tubos');
             $table->integer('penalty');
+            $table->integer('renewFee');
             $table->date('date');
             $table->date('dueDate');
             $table->string('staffAssigned', 100);
@@ -38,6 +39,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('renews');
     }
 }

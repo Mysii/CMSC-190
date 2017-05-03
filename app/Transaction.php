@@ -18,6 +18,20 @@ class Transaction extends Model
     }
 */
     
+    public function getTotalSanlaAttribute() {
+	    return $this->principalLoan;
+	}
 
+	public function getTotalTubosAttribute() {
+	    return $this->tubos;
+	}
+
+    public function getTotalAttribute() {
+        return $this->tubos - $this->principalLoan;
+    }
+
+    public function getOverAllTotalAttribute() {
+        return $this->sum('tubos') - $this->sum('principalLoan');
+    }
     
 }

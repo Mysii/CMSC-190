@@ -49,7 +49,7 @@
 									{{ csrf_field() }}
 
 									<div class="input-group">
-										<input type="date" class="form-control" name="dd" placeholder="Search..."> 
+										<input type="date" class="form-control" name="dd"> 
 										<span class="input-group-btn">
 											<button type="submit" class="btn btn-default">
 											    <span class="glyphicon glyphicon-search"></span>
@@ -77,15 +77,19 @@
 												<td id="principalLoan">{{$transaction->principalLoan}}</td>
 												<td></td>
 												<td id="tubos">{{$transaction->tubos}}</td>
-												<td></td>
+												<td>{{  $transaction->getTotalAttribute()  }}</td>
 											</tr>
 										@endforeach
 										<tr>
-											<td></td>
-											<td id="totalSanla"></td>
-											<td id="totalRenew"></td>
-											<td id="totalTubos"></td>
-											<td id="overallTotal"></td>
+									
+
+											<td><b>Total:</b></td>
+											<td><b>{{  $transaction->sum('principalLoan')  }}</b></td>
+											<td id="totalRenew"><b></b></td>
+											<td id="totalTubos"><b>{{  $transaction->sum('tubos')  }}</b></td>
+											<td id="overallTotal"><b>{{  $transaction->getOverAllTotalAttribute()  }}</b></td>
+
+
 										</tr>
 										
 								</table>
