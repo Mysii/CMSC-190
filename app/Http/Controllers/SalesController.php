@@ -30,13 +30,8 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $d = Input::get ( 'dd' );
         $transactions = Transaction::paginate(25);
-        
-        if(count($transactions) >= 0) {
-            return view('sales.index', compact('transactions'))->withDetails($transactions)->withQuery ( $d );
-        }
-        else return view ('sales.index')->withMessage('No Details found. Try to search again !');
+        return view('sales.index', compact('transactions'));
     }
 
     public function daily()

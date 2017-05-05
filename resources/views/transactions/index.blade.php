@@ -100,10 +100,7 @@
 												<a href="/transactions/{{ $transaction->id }}"><button type="submit" class="btn btn-info">
 												<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 												</button></a>
-												<!-- Edit Button 
-												<a href="/transactions/{{ $transaction->id }}/edit"><button type="submit" class="btn btn-primary">
-												<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-												</button></a>-->
+												<!-- Edit Button -->
 												<a href="/transactions/{{ $transaction->id }}/edit"><button type="submit" class="btn btn-primary">
 												<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 												</button></a>

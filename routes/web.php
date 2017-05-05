@@ -38,7 +38,7 @@ Route::get('/about', 'AboutController@index');
 //transactions routes
 Route::resource('transactions', 'TransactionsController');
 Route::get('/sanla', 'TransactionsController@sanla');
-//Route::get('/renew', 'TransactionsController@renew');
+Route::get('/renew', 'TransactionsController@renew');
 Route::get('/tubos', 'TransactionsController@tubos');
 Route::get('transaction/downloadExcel', 'TransactionsController@downloadExcel');
 Route::get('transaction/pdf', 'TransactionsController@pdf');
@@ -46,7 +46,7 @@ Route::any('/searchdate', 'TransactionsController@searchDate');
 Route::any('/search', 'TransactionsController@search');
 
 //renew routes
-Route::resource('renew', 'RenewController');
+Route::resource('renewal', 'RenewController');
 
 //inventory routes
 Route::get('/inventory', 'InventoryController@index');

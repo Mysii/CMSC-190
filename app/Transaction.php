@@ -17,7 +17,7 @@ class Transaction extends Model
         $this->attributes['dueDate'] = date('m-d-Y', strtotime($this->attributes['date'] .' +30 days '));
     }
 */
-    
+   /* 
     public function getTotalSanlaAttribute() {
 	    return $this->principalLoan;
 	}
@@ -25,13 +25,13 @@ class Transaction extends Model
 	public function getTotalTubosAttribute() {
 	    return $this->tubos;
 	}
-
+*/
     public function getTotalAttribute() {
-        return $this->tubos - $this->principalLoan;
+        return $this->tubos + $this->penalty - $this->principalLoan;
     }
 
     public function getOverAllTotalAttribute() {
-        return $this->sum('tubos') - $this->sum('principalLoan');
+        return $this->sum('tubos') + $this->sum('penalty') - $this->sum('principalLoan');
     }
     
 }

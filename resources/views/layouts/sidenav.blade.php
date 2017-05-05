@@ -46,10 +46,13 @@
                 </ul>
             <li><a href="/inventory"><svg class="glyph stroked clipboard with paper"><use xlink:href="#stroked-clipboard-with-paper"/></svg> Inventory</a></li>
             <li><a href="/sales"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Sales</a></li>
+
+             <li role="presentation" class="divider"></li>
             <li><a href="/sendnotif"><svg class="glyph stroked email"><use xlink:href="#stroked-email"/></svg> Send  Notification</a></li>
 
-            <li role="presentation" class="divider"></li>
+            <!--
             <li><a href="/about"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>About</a></li>
+            -->
         </ul>
 
     </div><!--/.sidebar-->

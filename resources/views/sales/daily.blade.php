@@ -20,44 +20,7 @@
 				<div class="panel-heading">
 					Sales (Cash Flow) <small><a href=""></a></small>
 				</div>
-				<div class="panel-body">
-					
-			    	<div class="col-md-6"> 		
-			    		<a href="/sales/pdf"><button class="btn btn-success">Download PDF</button></a>
-				    	<a href="/sales/downloadExcel"><button class="btn btn-success">Download Excel xlsx</button></a>
-				    </div>
 
-				    <div class="col-md-3"> 
-					    <form action="/search" method="POST" role="search">
-							{{ csrf_field() }}
-
-							<div class="input-group">
-								<input type="text" class="form-control" name="q" placeholder="Search..."> 
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default">
-									    <span class="glyphicon glyphicon-search"></span>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
-					<div class="col-md-3"> 
-					    <form action="/daily" method="POST" role="search">
-							{{ csrf_field() }}
-
-							<div class="input-group">
-								<input type="date" class="form-control" name="dd" placeholder="Search..."> 
-								<span class="input-group-btn">
-									<button type="submit" class="btn btn-default">
-									    <span class="glyphicon glyphicon-search"></span>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
-					
-				    
-				</div>
 
 				<div class="panel-body tabs">
 					<ul class="nav nav-tabs">
@@ -100,7 +63,7 @@
 											<tr>
 												<td>{{$transaction->date}}</td>
 												<td id="principalLoan">{{$transaction->principalLoan}}</td>
-												<td></td>
+												<td>{{$transaction->penalty}}</td>
 												<td id="tubos">{{$transaction->tubos}}</td>
 												<td></td>
 											</tr>

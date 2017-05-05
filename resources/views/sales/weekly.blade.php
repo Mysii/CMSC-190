@@ -20,12 +20,6 @@
 				<div class="panel-heading">
 					Sales (Cash Flow) <small><a href=""></a></small>
 				</div>
-				<div class="panel-body">
-					
-			    	
-					
-				    
-				</div>
 
 				<div class="panel-body tabs">
 					<ul class="nav nav-tabs">
@@ -37,28 +31,7 @@
 
 					<div class="panel-body">
 						
-						<div class="tab-content">
-							<div class="col-md-12">
-								<div class="col-md-9"> 		
-						    		<a href="/sales/pdf"><button class="btn btn-success">Download PDF</button></a>
-							    	<a href="/sales/downloadExcel"><button class="btn btn-success">Download Excel xlsx</button></a>
-							    </div>
-
-							    <div class="col-md-3"> 
-							    <form action="/weekly" method="POST" role="search">
-									{{ csrf_field() }}
-
-									<div class="input-group">
-										<input type="date" class="form-control" name="dd"> 
-										<span class="input-group-btn">
-											<button type="submit" class="btn btn-default">
-											    <span class="glyphicon glyphicon-search"></span>
-											</button>
-										</span>
-									</div>
-								</form>
-								</div>
-							</div>
+						
 							<div class="tab-pane fade in active" id="tab1">	
 								<table  class="table">
 									<thead>
@@ -75,21 +48,17 @@
 											<tr>
 												<td>{{$transaction->date}}</td>
 												<td id="principalLoan">{{$transaction->principalLoan}}</td>
-												<td></td>
+												<td>{{$transaction->penalty}}</td>
 												<td id="tubos">{{$transaction->tubos}}</td>
-												<td></td>
+												<td>{{  $transaction->getTotalAttribute()  }}</td>
 											</tr>
 										@endforeach
 										<tr>
-									
-
-											<td></td>
-											<td>{{  $transaction->sum('principalLoan')  }}</td>
-											<td id="totalRenew"></td>
-											<td id="totalTubos">{{  $transaction->sum('tubos')  }}</td>
-											<td id="overallTotal"></td>
-
-
+											<td><b>Total:</b></td>
+											<td><b>{{  $transaction->sum('principalLoan')  }}</b></td>
+											<td id="totalRenew"><b>{{  $transaction->sum('penalty')  }}</b></td>
+											<td id="totalTubos"><b>{{  $transaction->sum('tubos')  }}</b></td>
+											<td id="overallTotal"><b>{{  $transaction->getOverAllTotalAttribute()  }}</b></td>
 										</tr>
 										
 								</table>
