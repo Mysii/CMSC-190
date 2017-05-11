@@ -74,7 +74,7 @@
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li>&nbsp;&nbsp;&nbsp;</li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="/users/create">Register</a></li>
                         @else
                             <li class="dropdown pull-right">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>

@@ -11,6 +11,12 @@ use PDF;
 
 class TransactionsController extends Controller
 {
+
+     public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -72,8 +78,7 @@ class TransactionsController extends Controller
     public function searchDate(){
         $d = Input::get ( 'd' );
         //$d1 = Input::get ( 'd1' );
-        $searchdate =DB::table('transactions')->where('date','=', $d)->paginate(5);
-        $searchdate =DB::table('transactions')->where('dueDate','=', $d)->paginate(5);
+        $searchdate =DB::table('transactions')->where('date','=', $d)->orWhere('dueDate','=', $d)->paginate(5);
         //$searchdate =DB::table('transactions')->whereBetween('date','=', [$d, $d1])->paginate(5);
 
       

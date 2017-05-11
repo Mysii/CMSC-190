@@ -56,6 +56,10 @@
 									<td>{{$transaction->clientName}}</td>
 								</tr>
 								<tr>
+									<td><label for="" class="col-md-12">Contact No.</label></td>
+									<td>{{$transaction->contactNo}}</td>
+								</tr>
+								<tr>
 									<td><label for="" class="col-md-12">Unit</label></td>
 									<td>{{$transaction->unit}}</td>
 								</tr>

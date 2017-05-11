@@ -19,6 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->string('transactionCode', 10)->unique();
             $table->string('transactionType', 10);
             $table->string('clientName', 100);
+            $table->string('contactNo');
             $table->string('unit', 100);
             $table->string('serialNo', 100);
             $table->integer('principalLoan');

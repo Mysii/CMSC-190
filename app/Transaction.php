@@ -9,7 +9,7 @@ class Transaction extends Model
 	//
 	//protected $table = 'transactions';
     protected $fillable = [
-        'branch', 'transactionCode', 'transactionType', 'clientName', 'unit', 'serialNo', 'principalLoan', 'tubos', 'penalty', 'date', 'dueDate', 'staffAssigned'
+        'branch', 'transactionCode', 'transactionType', 'clientName', 'contactNo', 'unit', 'serialNo', 'principalLoan', 'tubos', 'penalty', 'date', 'dueDate', 'staffAssigned'
     ];
 /*
     public function setDueDateAttribute($date)

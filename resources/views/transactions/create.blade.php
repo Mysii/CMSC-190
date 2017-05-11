@@ -119,6 +119,20 @@
 								</div>
 							</div>
 
+							<div class="form-group{{ $errors->has('contactNo') ? ' has-error' : '' }}">
+								<label for="contactNo" class="col-md-4 control-label">Contact No.</label>
+
+								<div class="col-md-6">
+									<input id="contactNo" type="text" class="form-control" name="contactNo" value="{{ old('contactNo') }}" required autofocus>
+
+								@if ($errors->has('contactNo'))
+								<span class="help-block">
+									<strong>{{ $errors->first('contactNo') }}</strong>
+								</span>
+								@endif
+								</div>
+							</div>
+
 							<div class="form-group{{ $errors->has('unit') ? ' has-error' : '' }}">
 								<label for="unit" class="col-md-4 control-label">Unit</label>
 								

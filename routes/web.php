@@ -64,7 +64,7 @@ Route::any('/weekly', 'SalesController@weekly');
 Route::any('/monthly', 'SalesController@monthly');
 
 //users/adminstaff routes
-Route::resource('adminstaff', 'AdminStaffController');
+//Route::resource('adminstaff', 'AdminStaffController');
 Route::resource('users', 'UsersController');
 Route::get('/admin', 'UsersController@admin');
 Route::get('/staff', 'UsersController@staff');
@@ -73,5 +73,7 @@ Route::any('/searchusers', 'UsersController@search');
 //send notif routes
 Route::get('/sendnotif', 'SendNotifController@index');
 Route::any('/sent', 'SendNotifController@sendSMS');
+
+Route::any('/sentmsg', 'SendNotifController@sendNotif');
 
 

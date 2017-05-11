@@ -8,6 +8,7 @@ use App\Transaction;
 use App\User;
 use Illuminate\Support\Facades\Input;
 use DB;
+use Carbon\Carbon;
 
 class SendNotifController extends Controller
 {
@@ -48,6 +49,30 @@ class SendNotifController extends Controller
 
         $mobile = Input::get ( 'mobile' );
         $message = Input::get ( 'message' );
+
+        // Send SMS
+        $response = Chikka::send($mobile, $message);
+
+        // Send SMS and retrieve response
+        //$response = $chikka->send($mobile, $message);
+
+        // Get message id
+        $messageId = $response->attachments->message->id;
+        return redirect()->back();
+    }
+
+    public function sendNotif()
+    {
+        $dt = Carbon::now();
+        $beforedt = $dt->subWeek();
+        $transactions = Transaction::where('dueDate','>=', $beforedt )->select('contactNo')->get();
+
+        // Mobile number of receiver and message to send
+        //$mobile = '09157514851';
+        $message = "Good day! Please be reminded that your pawn will be defaulted after a week. Please redeem your pawn before its maturity date. From J&M Pawnshop.";
+
+        $mobile =  $transactions;
+        //$message = Input::get ( 'message' );
 
         // Send SMS
         $response = Chikka::send($mobile, $message);
