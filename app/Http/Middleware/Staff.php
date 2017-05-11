@@ -1,7 +1,12 @@
-<?php namespace App\Http\Middleware;
+<?php
+
+namespace App\Http\Middleware;
+
 use Closure;
-use Illuminate\Http\RedirectResponse;
-class IsAdmin {
+use Illuminate\Support\Facades\Auth;
+
+class Staff
+{
     /**
      * Handle an incoming request.
      *
@@ -11,11 +16,11 @@ class IsAdmin {
      */
     public function handle($request, Closure $next)
     {
-        $user = $request->user();
-        if ($user && $user->IsAdmin())
+        if ( Auth::check() && Auth::user()->isAdmin('0') )
         {
             return $next($request);
         }
-        return new RedirectResponse(url('/'));
+
+        return redirect('home');
     }
 }

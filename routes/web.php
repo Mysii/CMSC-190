@@ -76,4 +76,12 @@ Route::any('/sent', 'SendNotifController@sendSMS');
 
 Route::any('/sentmsg', 'SendNotifController@sendNotif');
 
+Route::get('protected', ['middleware' => ['auth', 'admin'], function() {
+    return "This page requires that you be logged in and an Admin";
+}]);
+
+Route::get('protected', ['middleware' => ['auth', 'staff'], function() {
+    return "This page requires that you be logged in and a Stadd";
+}]);
+
 
