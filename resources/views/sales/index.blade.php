@@ -26,7 +26,7 @@
 					<ul class="nav nav-tabs">
 						<li  class="active"><a href="/sales" >All</a></li>
 						<li><a href="/daily" >Daily</a></li>
-						<li><a href="/weekly" >Weekly</a></li>
+						<!--<li><a href="/weekly" >Weekly</a></li>-->
 						<li><a href="/monthly" >Monthly</a></li>
 					</ul>
 
@@ -36,7 +36,7 @@
 							<div class="col-md-12">
 								<div class="col-md-9"> 		
 						    		<a href="/sales/pdf"><button class="btn btn-success">Download PDF</button></a>
-							    	<a href="/sales/downloadExcel"><button class="btn btn-success">Download Excel xlsx</button></a>
+							    	<!--<a href="/sales/downloadExcel"><button class="btn btn-success">Download Excel xlsx</button></a>-->
 							    </div>
 
 							</div>

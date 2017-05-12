@@ -31,7 +31,7 @@ class InventoryController extends Controller
     {
         $dt = Carbon::now();
         $beforedt = $dt->subWeek();
-        $transactions = Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->paginate(5);
+        $transactions = Transaction::where('dueDate','<=', $dt )->orWhere('dueDate','>=', $beforedt )->paginate(5);
         
         return view('inventory.index', compact('transactions'));
     }
@@ -39,7 +39,7 @@ class InventoryController extends Controller
     public function remata()
     {
         $dt = Carbon::now();
-        $transactions =DB::table('transactions')->where('dueDate','>=', $dt )->paginate(5);
+        $transactions =Transaction::where('dueDate','>=', $dt )->paginate(5);
         
         return view('inventory.remata', compact('transactions'));
     }
@@ -48,25 +48,29 @@ class InventoryController extends Controller
     {
         $dt = Carbon::now();
         $beforedt = $dt->subWeek();
-        $transactions =DB::table('transactions')->where('dueDate','>=', $beforedt )->paginate(5);
+        $transactions =Transaction::where('dueDate','>=', $beforedt )->paginate(5);
         
         return view('inventory.mareremata', compact('transactions'));
     }
 
     public function pdf()
     {
-        $transactions = Transaction::all();
-        $pdf = PDF::loadView('transactions.pdf', ['transactions' => $transactions])->setPaper('a4', 'landscape');
-        return $pdf->download('transactions.pdf');
+        $dt = Carbon::now();
+        $beforedt = $dt->subWeek();
+        $transactions = Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->get();
+        $pdf = PDF::loadView('inventory.pdf', ['transactions' => $transactions])->setPaper('a4', 'landscape');
+        return $pdf->download('inventory.pdf');
         //return view('transactions.pdf', compact('transactions'));
     }
 
     public function downloadExcel()
     {
-        $data = Transaction::get()->toArray();
-        return Excel::create('transactions', function($excel) use ($data) 
+        $dt = Carbon::now();
+        $beforedt = $dt->subWeek();
+        $data = Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->get()->toArray();
+        return Excel::create('inventory', function($excel) use ($data) 
         {
-            $excel->sheet('transactions', function($sheet) use ($data)
+            $excel->sheet('inventory', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
             });
@@ -74,8 +78,12 @@ class InventoryController extends Controller
     }
 
     public function search(){
+        $dt = Carbon::now();
+        $beforedt = $dt->subWeek();
+        //$transactions = Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->paginate(5);
+
         $q = Input::get ( 'q' );
-        $search =DB::table('transactions')->where('clientName','like', '%'.$q.'%')->orWhere('transactionCode','like', '%'.$q.'%')->paginate(5);
+        $search = Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->where('clientName','like', '%'.$q.'%')->orWhere('transactionCode','like', '%'.$q.'%')->paginate(5);
        // $search =DB::table('transactions')->where('transactionCode','like', '%'.$q.'%')->paginate(5);
 
       
@@ -84,16 +92,18 @@ class InventoryController extends Controller
 
         if(count($search) >= 0) {
             //return view('transactions.search')->withDetails($transaction)->withQuery ( $q );
-            return view('transactions.search', compact('search'))->withDetails($search)->withQuery ( $q );
+            return view('inventory.search', compact('search'))->withDetails($search)->withQuery ( $q );
         }
-        else return view ('transactions.search')->withMessage("No Details found. Try to search again !");
+        else return view ('inventory.search')->withMessage("No Details found. Try to search again !");
     }
 
     public function searchDate(){
+        $dt = Carbon::now();
+        $beforedt = $dt->subWeek();
         $d = Input::get ( 'd' );
         //$d1 = Input::get ( 'd1' );
-        $searchdate =DB::table('transactions')->where('date','=', $d)->paginate(5);
-        $searchdate =DB::table('transactions')->where('dueDate','=', $d)->paginate(5);
+        $searchdate =Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->where('date','=', $d)->paginate(5);
+        $searchdate =Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->where('dueDate','=', $d)->paginate(5);
         //$searchdate =DB::table('transactions')->whereBetween('date','=', [$d, $d1])->paginate(5);
 
       

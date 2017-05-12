@@ -33,6 +33,7 @@ Route::post('/userprofile/store','UserProfileController@store');
 //Route::get('/sales', 'SalesController@index');
 //Route::get('/sendnotif', 'SendNotifController@index');
 Route::get('/about', 'AboutController@index');
+Route::get('/contact', 'ContactController@index');
 
 
 //transactions routes
@@ -73,7 +74,6 @@ Route::any('/searchusers', 'UsersController@search');
 //send notif routes
 Route::get('/sendnotif', 'SendNotifController@index');
 Route::any('/sent', 'SendNotifController@sendSMS');
-
 Route::any('/sentmsg', 'SendNotifController@sendNotif');
 
 Route::get('protected', ['middleware' => ['auth', 'admin'], function() {

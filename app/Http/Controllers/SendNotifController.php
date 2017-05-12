@@ -33,7 +33,7 @@ class SendNotifController extends Controller
 
         //$transactions = DB::table('transactions')->select('contactNo')->all();
         //return view('sendnotif.index'
-        $transactions = User::all();
+        $transactions = Transaction::all();
         
         return view('sendnotif.index', compact('transactions'));
 

@@ -4,14 +4,15 @@
 	<title></title>
 </head>
 <body>
+	 $beforedt = $dt->subWeek();
 					<table  class="table">
 						<thead>
 							<tr>
-								
 								<th>Branch</th>
 								<th>Transaction Code</th>
 								<th>Transaction Type</th>
 								<th>Client Name</th>
+								<th>Contact No.</th>
 								<th>Unit</th>
 								<th>Serial No.</th>
 								<th>Principal Loan</th>
@@ -30,6 +31,7 @@
 									<td>{{$transaction->transactionCode}}</td>
 									<td>{{$transaction->transactionType}}</td>
 									<td>{{$transaction->clientName}}</td>
+									<td>{{$transaction->contactNo}}</td>
 									<td>{{$transaction->unit}}</td>
 									<td>{{$transaction->serialNo}}</td>
 									<td>{{$transaction->principalLoan}}</td>

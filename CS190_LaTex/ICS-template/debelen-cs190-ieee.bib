@@ -1,0 +1,197 @@
+%% An example BibTeX database for the official IEEEtran.bst BibTeX style file.
+%% [IEEEexample.bib v1.10 Copyright (c) 2002 Michael Shell]
+%% EDITED FOR CMSC 190 ICS use - gaflores 2006
+%
+% I. Available tags(Types of references):
+%
+% MASTERSTHESIS
+%     (mastersthesis) master's thesis
+%     (mastersthesis) master's thesis with a type field
+% PHDTHESIS
+%     (phdthesis) Ph.D. dissertation with a URL field
+%
+% ARTICLE
+%     (article) an article in a journal
+%     (article) journal article using et al.
+%     (article) journal article with large page numbers
+%     (article) journal article with dual months 
+%     (article) journal article to be published as an article entry type
+% INPROCEEDINGS
+%     (inproceedings) a paper in a conference proceedings
+%     (inproceedings) conference paper with an address and days
+%     (inproceedings) conference paper with volume number
+%     (inproceedings) conference paper with a paper number
+%     (inproceedings) conference paper with a postdeadline type paper
+%     (inproceedings) presented at a conference
+%
+% BOOK
+%     (book) book
+%     (book) book with editor and no author
+%     (book) book with edition, author and editor
+%     (book) book with series and volume
+% INBOOK
+%     (inbook) inbook with chapter number
+%     (inbook) inbook with pages and note
+% INCOLLECTION
+%     (incollection) incollection with author and editor
+%     (incollection) incollection with series
+%     (incollection) incollection with author, editor, chapter and pages
+%     (incollection) incollection with a large number of authors
+%
+% MANUAL
+%     (manual) a data book as a manual
+% TECHREPORT
+%     (techreport) technical report
+%     (techreport) technical report with type
+%
+% PERIODICAL
+%     (periodical) a periodical
+% ELECTRONIC
+%     (electronic) Website with and/or without author
+%     (electronic) electronic with a howpublished information field 
+%     (electronic) electronic with an organization and address
+% 
+% UNPUBLISHED
+%     (unpublished) an unpublished work
+% MISC
+%     (misc) journal article to be published as a misc entry type
+%     (misc) misc for a techreport like reference
+%     (misc) misc for a white paper
+%     (misc) misc for a data sheet
+%     (misc) a private communication as a misc entry type
+%     (misc) an internet request for comments (RFC) as a misc entry
+%
+% II. Example references:
+
+@article{anigbogu11,
+  author        = "S. O. Anigbogu and O. O. Francisca and K. Usman",
+  title         = "AN INTELLIGENT MODEL FOR SALES AND INVENTORY MANAGEMENT ",
+  journal       = "Indian Journal of Computer Science and Engineering (IJCSE) ",
+  volume        = "2",
+  month         =oct # "/" # nov,
+  year          = "2011",
+  pages         = "2380-2384"
+};
+
+@techreport{carino11,
+  author        = "K. L. Cariño",
+  title         = "Sales and Product Inventory Management System for Leads Agricultural Products Corporations",
+  institution   = "University of the Philippines , Los Banos",
+  type          = "Special Problem",
+  year          = "2011"
+};
+
+@techreport{ong14,
+  author        = "R. K. Ong",
+  title         = "Web-based Clinic Information and Incentory Management System",
+  institution   = "University of the Philippines , Los Banos",
+  type          = "Special Problem",
+  year          = "2014"
+};
+
+@article{rajeswari16,
+  author        = "M. Rajeswari and M. Parvathi and G. Savitha and S. Shirley",
+  title         = "The Survey on Inventory Management System for Supermarket Using Android Application",
+  journal       = "International Journal of Innovative Research in Computer and Communication Engineering",
+  volume        = "4",
+  month         = feb,
+  year          = "2016",
+  pages         = "2380-2384"
+};
+
+@inproceedings{ren13,
+  author        = "Y. Ren and M. Chen",
+  title         = "Design and Implementation of Supermarket Management System",
+  booktitle     = "4th International Conference on Mechatronics, Materials, Chemistry and Computer Engineering (ICMMCCE 2015)",
+  address       = "Jinzhou, China",
+  month         = dec # "10,",
+  year          = "2013",
+  pages         = "785-791"
+};
+
+@techreport{ruel15,
+  author        = "S. Ruel",
+  title         = "Inventory and sales information system for small-scale merchandising busines",
+  institution   = "University of the Philippines , Los Banos",
+  type          = "Special Problem",
+  year          = "2015"
+};
+
+@techreport{sanbuenaventura14,
+  author        = "G. San Buenaventura",
+  title         = "Open LGU: Inventory of Supplies and Materials",
+  institution   = "University of the Philippines , Los Banos",
+  type          = "Special Problem",
+  year          = "2014"
+};
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% An example of a IEEEtran control entry which can change some IEEEtran.bst
+% settings. An entry like this must be cited via \bstctlcite{} command
+% before the first real \cite{}. The same entry key cannot be called twice
+% (just like multiple \cite{} of the same entry key place only one entry
+% in the bibliography.)
+% The available control fields are:
+% 
+% CTLuse_article_number
+% "no" turns off the display of the number for articles.
+% "yes" enables
+%
+% CTLuse_paper
+% "no" turns off the display of the paper and type fields in inproceedings.
+% "yes" enables
+% 
+% CTLuse_forced_etal 
+% "no" turns off the forced use of "et al."
+% "yes" enables
+% 
+% CTLmax_names_forced_etal
+% The maximum number of names that can be present beyond which an "et al."
+% usage is forced. Be sure that CTLnames_show_etal (below)
+% is not greater than this value!
+% 
+% CTLnames_show_etal
+% The number of names that will be shown with a forced "et al.".
+% Must be less than or equal to CTLmax_names_forced_etal
+% 
+% CTLuse_alt_spacing 
+% "no" turns off the alternate interword spacing for entries with URLs.
+% "yes" enables
+% 
+% CTLalt_stretch_factor
+% If alternate interword spacing for entries with URLs is enabled, this is
+% the interword spacing stretch factor that will be used. For example, the
+% default "4" here means that the interword spacing in entries with URLs can
+% stretch to four times normal. Does not have to be an integer.
+% 
+% CTLdash_repeated_names
+% "no" turns off the "dashification" of repeated (i.e., identical to those
+% of the previous entry) names. IEEE normally does this.
+% "yes" enables
+% 
+% CTLname_format_string
+% The name format control string as explained in the BibTeX style hacking
+% guide.
+% IEEE style "{f.~}{vv~}{ll}{, jj}" is the default,
+% 
+% CTL_name_latex_cmd
+% A LaTeX command that each name will be fed to (e.g., "\textsc").
+% Leave empty if no special font is desired for the names.
+% The default is empty.
+% 
+% Those fields that are not to be changed can be left out or empty.
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLuse_article_number     = "yes",
+  CTLuse_paper              = "yes",
+  CTLuse_forced_etal        = "no",
+  CTLmax_names_forced_etal  = "10",
+  CTLnames_show_etal        = "1",
+  CTLuse_alt_spacing        = "yes",
+  CTLalt_stretch_factor     = "4",
+  CTLdash_repeated_names    = "yes",
+  CTLname_format_string     = "{f.~}{vv~}{ll}{, jj}",
+  CTLname_latex_cmd         = ""
+};

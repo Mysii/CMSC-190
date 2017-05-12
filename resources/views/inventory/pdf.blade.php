@@ -4,6 +4,10 @@
 	<title></title>
 </head>
 <body>
+	<h1 align="center">
+		<b>J & M Pawnshop</b>
+	</h1>
+	<h3><b>Inventory Records</b></h3>
 					<table  class="table">
 						<thead>
 							<tr>

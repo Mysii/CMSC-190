@@ -1,0 +1,56 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{anigbogu11}
+S.~O. Anigbogu, O.~O. Francisca, and K.~Usman, ``An intelligent model for sales
+  and inventory management,'' \emph{Indian Journal of Computer Science and
+  Engineering (IJCSE)}, vol.~2, pp. 2380--2384, Oct./Nov. 2011.
+
+\bibitem{ren13}
+Y.~Ren and M.~Chen, ``Design and implementation of supermarket management
+  system,'' in \emph{4th International Conference on Mechatronics, Materials,
+  Chemistry and Computer Engineering (ICMMCCE 2015)}, Jinzhou, China, Dec.10,
+  2013, pp. 785--791.
+
+\bibitem{rajeswari16}
+M.~Rajeswari, M.~Parvathi, G.~Savitha, and S.~Shirley, ``The survey on
+  inventory management system for supermarket using android application,''
+  \emph{International Journal of Innovative Research in Computer and
+  Communication Engineering}, vol.~4, pp. 2380--2384, Feb. 2016.
+
+\bibitem{ruel15}
+S.~Ruel, ``Inventory and sales information system for small-scale merchandising
+  busines,'' University of the Philippines , Los Banos,'' Special Problem,
+  2015.
+
+\bibitem{carino11}
+K.~L. Cariño, ``Sales and product inventory management system for leads
+  agricultural products corporations,'' University of the Philippines , Los
+  Banos,'' Special Problem, 2011.
+
+\bibitem{ong14}
+R.~K. Ong, ``Web-based clinic information and incentory management system,''
+  University of the Philippines , Los Banos,'' Special Problem, 2014.
+
+\bibitem{sanbuenaventura14}
+G.~S. Buenaventura, ``Open lgu: Inventory of supplies and materials,''
+  University of the Philippines , Los Banos,'' Special Problem, 2014.
+
+\end{thebibliography}

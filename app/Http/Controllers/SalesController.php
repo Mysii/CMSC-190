@@ -92,9 +92,9 @@ class SalesController extends Controller
     public function downloadExcel()
     {
         $data = Transaction::get()->toArray();
-        return Excel::create('transactions', function($excel) use ($data) 
+        return Excel::create('sales', function($excel) use ($data) 
         {
-            $excel->sheet('transactions', function($sheet) use ($data)
+            $excel->sheet('sales', function($sheet) use ($data)
             {
                 $sheet->fromArray($data);
             });

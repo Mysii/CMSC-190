@@ -17,7 +17,6 @@
         <ul class="nav menu">
             <li class="active"><a href="/home"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Home</a></li>
             <!--<li><a href="/adminstaff"><svg class="glyph stroked calendar"><use xlink:href="#stroked-male-user"></use></svg> Admin and Staff</a></li>-->
-            @if ( Auth::check() && Auth::user()->isAdmin('1') )
             <li class="dropdown"><a href="/users" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><svg class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg></use></svg> User <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li>
@@ -31,7 +30,6 @@
                         </a>
                     </li>
                 </ul>
-            @endif
             <li class="dropdown"><a href="/transactions" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><svg class="glyph stroked app window with content"><use xlink:href="#stroked-app-window-with-content"/></svg></use></svg> Transaction <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li>

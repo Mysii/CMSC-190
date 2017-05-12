@@ -26,7 +26,7 @@
 					<ul class="nav nav-tabs">
 						<li><a href="/sales" >All</a></li>
 						<li  class="active"><a href="/daily" >Daily</a></li>
-						<li><a href="/weekly" >Weekly</a></li>
+						<!--<li><a href="/weekly" >Weekly</a></li>-->
 						<li><a href="/monthly" >Monthly</a></li>
 					</ul>
 
