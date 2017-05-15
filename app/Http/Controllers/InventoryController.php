@@ -39,7 +39,7 @@ class InventoryController extends Controller
     public function remata()
     {
         $dt = Carbon::now();
-        $transactions =Transaction::where('dueDate','>=', $dt )->paginate(5);
+        $transactions =DB::table('transactions')->where('dueDate','<=', $dt )->paginate(5);
         
         return view('inventory.remata', compact('transactions'));
     }
@@ -48,7 +48,7 @@ class InventoryController extends Controller
     {
         $dt = Carbon::now();
         $beforedt = $dt->subWeek();
-        $transactions =Transaction::where('dueDate','>=', $beforedt )->paginate(5);
+        $transactions =DB::table('transactions')->where('dueDate','<=', $dt )->where('dueDate','>=', $beforedt )->paginate(5);
         
         return view('inventory.mareremata', compact('transactions'));
     }
@@ -57,7 +57,7 @@ class InventoryController extends Controller
     {
         $dt = Carbon::now();
         $beforedt = $dt->subWeek();
-        $transactions = Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->get();
+        $transactions = Transaction::where('dueDate','<=', $dt )->orWhere('dueDate','>=', $beforedt )->get();
         $pdf = PDF::loadView('inventory.pdf', ['transactions' => $transactions])->setPaper('a4', 'landscape');
         return $pdf->download('inventory.pdf');
         //return view('transactions.pdf', compact('transactions'));
@@ -102,8 +102,8 @@ class InventoryController extends Controller
         $beforedt = $dt->subWeek();
         $d = Input::get ( 'd' );
         //$d1 = Input::get ( 'd1' );
-        $searchdate =Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->where('date','=', $d)->paginate(5);
-        $searchdate =Transaction::where('dueDate','>=', $dt )->orWhere('dueDate','>=', $beforedt )->where('dueDate','=', $d)->paginate(5);
+        $searchdate =Transaction::where('dueDate','<=', $dt )->orWhere('dueDate','>=', $beforedt )->where('date','=', $d)->paginate(5);
+        $searchdate =Transaction::where('dueDate','<=', $dt )->orWhere('dueDate','>=', $beforedt )->where('dueDate','=', $d)->paginate(5);
         //$searchdate =DB::table('transactions')->whereBetween('date','=', [$d, $d1])->paginate(5);
 
       
